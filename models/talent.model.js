@@ -142,8 +142,8 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   Talent.beforeSave(async (talent, options) => {
-    if (talent.changed('password')) {
-      talent.password = await bcrypt.hash(talent.password, 10);
+    if (talent.changed('Password')) {
+      talent.Password = await bcrypt.hash(talent.Password, 10);
     }
   });
 
